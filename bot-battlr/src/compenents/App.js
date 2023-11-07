@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import BotCollection from './BotCollection';
+import BotCollection from './BotsCollection';
 import YourBotArmy from './YourBotArmy';
 import './App.css';
 function App() {
@@ -7,7 +7,7 @@ function App() {
   const [yourBotArmy, setYourBotArmy] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:8001/bots')
+    fetch('http://localhost:3000/bots')
       .then((response) => response.json())
       .then((data) => setBots(data));
   }, []);
@@ -22,6 +22,7 @@ function App() {
     const updatedArmy = yourBotArmy.filter((b) => b.id !== bot.id);
     setYourBotArmy(updatedArmy);
   };
+
   return (
     <div>
       <YourBotArmy yourBotArmy={yourBotArmy} onRelease={releaseBot} />
@@ -30,5 +31,4 @@ function App() {
   );
 }
 
-export default App
-;
+export default App;

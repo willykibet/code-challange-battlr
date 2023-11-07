@@ -1,7 +1,5 @@
 import React from 'react';
-import Bot from './Bot';
-
-function YourBotArmy({ yourBotArmy, onRelease, onDischarge }) {
+function YourBotArmy({ yourBotArmy, onRelease}) {
   return (
     <div className="your-bot-army">
       <h2>Your Bot Army</h2>

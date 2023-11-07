@@ -1,5 +1,5 @@
 import React from 'react';
-import Bot from './Bot';
+import Bot from './Bots';
 import styles from './BotCollection.module.css';
 
 function BotCollection({ bots, onAddToArmy }) {
