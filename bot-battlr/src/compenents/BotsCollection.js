@@ -1,10 +1,10 @@
 import React from 'react';
 import Bot from './Bots';
-import styles from './BotCollection.module.css';
+import bounju from './BotCollection.module.css';
 
 function BotCollection({ bots, onAddToArmy }) {
  return (
-    <div className={styles.botCollection}>
+    <div className={bounju.botCollection}>
       {bots.map((bot) => (
         <Bot key={bot.id} bot={bot} onAddToArmy={onAddToArmy} />
       ))}
