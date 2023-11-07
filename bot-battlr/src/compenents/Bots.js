@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
 function Bot({ bot, onAddToArmy, isAdded }) {
   return (
-    <div className={`bot-card ${isAdded ? 'added' : ''}`}>
+    <div className={`bot-card ${isAdded ? "added" : ""}`}>
       <img src={bot.avatar_url} alt={bot.name} className="medium-bot" />
       <h3>{bot.name}</h3>
       <p>Health: {bot.health}</p>

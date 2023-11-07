@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+Project README
+This README provides instructions and information for the React application project, which involves creating a bot management system. Please follow the guidelines and instructions carefully to set up and complete the project successfully.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Instructions
+For this project, you'll be building a React application that displays a list of available bots, among other features. Follow these steps to set up your project:
 
-## Available Scripts
+Project Setup
+Create a new project folder.
 
-In the project directory, you can run:
+Create a new GitHub repository and add your TM as a contributor (only for grading purposes).
 
-### `npm start`
+Regularly commit your code to the repository.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+In your project directory, create a db.json file and use the provided data for your server DB.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Run the following command to start the backend: json-server --watch db.json.
 
-### `npm test`
+Test your server by visiting this route in the browser: http://localhost:8001/bots.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Project Guidelines
+Your project should conform to the following set of guidelines:
 
-### `npm run build`
+Core Deliverables
+As a user, you should be able to:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+See profiles of all bots rendered in the BotCollection.
+Add an individual bot to your army by clicking on it. The selected bot should render in the YourBotArmy component. The bot can be enlisted only once. The bot does not disappear from the BotCollection.
+Release a bot from your army by clicking on it. The bot disappears from the YourBotArmy component.
+Discharge a bot from their service forever by clicking the red button marked "x," which would delete the bot both from the backend and from the YourBotArmy on the frontend.
+Endpoints for Core Deliverables
+GET /bots
+Example Response:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+json
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[
+  {
+    "id": 101,
+    "name": "wHz-93",
+    "health": 94,
+    "damage": 20,
+    "armor": 63,
+    "bot_class": "Support",
+    "catchphrase": "1010010101001101100011000111101",
+    "avatar_url": "https://robohash.org/nostrumrepellendustenetur.png?size=300x300&set=set1",
+    "created_at": "2018-10-02T19:55:10.800Z",
+    "updated_at": "2018-10-02T19:55:10.800Z"
+  },
+  {
+    "id": 102,
+    "name": "RyM-66",
+    "health": 86,
+    "damage": 36,
+    "armor": 77,
+    "bot_class": "Medic",
+    "catchphrase": "0110011100000100011110100110011000011001",
+    "avatar_url": "https://robohash.org/quidemconsequaturaut.png?size=300x300&set=set1",
+    "created_at": "2018-10-02T19:55:10.827Z",
+    "updated_at": "2018-10-02T19:55:10.827Z"
+  }
+]
+DELETE /bots/:id
+Example Response:
 
-### `npm run eject`
+json
+Copy code
+{}
+Advanced Deliverables
+These deliverables are not required to pass the code challenge, but if you have the extra time or wish to continue working on the project, they are a great way to stretch your skills.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+As a user, you should be able to:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Choose if you want to enlist a bot into your army or just see their data. Clicking on the card should instead display a show view (BotSpecs) for that bot, which should replace BotsCollection. BotSpecs should have two buttons: one to go back to the list view and another to enlist that bot.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Sort bots by their health, damage, or armor. For this, create a new component, SortBar.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+When you enlist a bot, it will be removed from the BotCollection and added to YourBotArmy.
 
-## Learn More
+Filter bots by their class. You can select multiple filters at the same time.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Sort bots by their health, damage, or armor. For this, create a new component, SortBar.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Only enlist one bot from each bot_class. The classes are ["Support", "Medic", "Assault", "Defender", "Captain", "Witch"].
 
-### Code Splitting
+Website URL
+Please provide the link to the website you'd like to submit for this assignment.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Website URL: [Insert your website URL here]
 
-### Analyzing the Bundle Size
+Rubric
+Please be aware that the project will be assessed based on the following criteria:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Props & State
+Advanced deliverables are met.
+State works and is held by the lowest common component. No unnecessary state is created. Only the necessary props are being passed down. Functions used to edit state are passed down.
+Code Structure/Efficiency
+Components are structured logically. Class components are only used when needed, functional components are used for everything else. Code is abstracted into clear methods. Used object destructuring and spread operator successfully.
+Rendering
+Renders everything asked for in the deliverables. Components are abstract and reusable. No unnecessary components were created.
